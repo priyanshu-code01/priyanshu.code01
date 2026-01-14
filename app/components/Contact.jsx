@@ -68,8 +68,7 @@ const Contact = () => {
                 <input 
                     type="text" 
                     placeholder='Enter your name' 
-                    required 
-                    autoFocus={true}
+                    required
                     className='w-full p-4 outline-none border border-white/10 rounded-xl bg-[#111] text-amber-500 placeholder-gray-500 focus:border-amber-500/50 focus:bg-white/5 transition-all duration-300' 
                     name='name' 
                 />
