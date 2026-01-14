@@ -50,7 +50,7 @@ const Header = () => {
           </a>
 
           {/* Menu Button for Mobile */}
-          <button onClick={openMenu} className="block md:hidden p-2">
+          <button onClick={openMenu} className="block md:hidden p-2 cursor-pointer">
             <Image src={assets.menu} alt="menu" className="w-8" />
           </button>
         </div>

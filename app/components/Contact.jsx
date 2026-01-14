@@ -99,7 +99,7 @@ const Contact = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className='py-3.5 px-10 w-full md:w-max flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 to-orange-600 text-white rounded-full mx-auto hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg shadow-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed'
+          className='py-3.5 px-10 w-full md:w-max flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 to-orange-600 text-white cursor-pointer rounded-full mx-auto hover:scale-105 active:scale-95 transition-transform duration-300 shadow-lg shadow-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed'
         >
           {isSubmitting ? "Sending..." : "Submit now"}
           {!isSubmitting && <Image src={assets.right_arrow} alt='arrow' className='w-4' />}
