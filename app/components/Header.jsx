@@ -13,130 +13,129 @@ const Header = () => {
   };
 
   return (
-    <header className="relative h-full w-full overflow-x-hidden">
+    <header className="relative w-full overflow-x-hidden min-h-screen flex flex-col justify-center">
+      
       {/* Background Image */}
       <Image
         src={assets.header_bg_color}
-        loading="eager"
         alt="header background"
         fill
         priority
-        className="object-cover -z-10"
+        className="object-cover -z-10 opacity-90"
       />
 
       {/* Navbar */}
-      <nav className="w-full top-0 px-5 lg:px-8 xl:px-[8%] flex items-center justify-between z-50">
-          {/* Logo */}
+      <nav className="absolute top-0 left-0 w-full px-5 lg:px-12 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        {/* Logo */}
         <a href="#top">
-          <Image src={assets.logo} className="w-14 sm:w-18 md:w-24 cursor-pointer" alt="Logo" />
+          <Image src={assets.logo} className="w-28 cursor-pointer" alt="Logo" />
         </a>
 
-        {/* Desktop Menu - 'hidden md:flex' allows it to show on larger fulls */}
-        <ul className="hidden md:flex items-center gap-6 lg:gap-10">
-          <li><a className="text-amber-400 hover:text-amber-700 transition-all" href="#top">Home</a></li>
-          <li><a className="text-amber-400 hover:text-amber-700 transition-all" href="#about">About</a></li>
-          <li><a className="text-amber-400 hover:text-amber-700 transition-all" href="#skills">Skills</a></li>
-          <li><a className="text-amber-400 hover:text-amber-700 transition-all" href="#work">Project</a></li>
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-8 lg:gap-12 bg-white/10 px-8 py-3 rounded-full backdrop-blur-md border border-white/10 shadow-sm">
+          <li><a className="text-white/90 hover:text-amber-400 font-medium transition-all" href="#top">Home</a></li>
+          <li><a className="text-white/90 hover:text-amber-400 font-medium transition-all" href="#about">About</a></li>
+          <li><a className="text-white/90 hover:text-amber-400 font-medium transition-all" href="#skills">Skills</a></li>
+          <li><a className="text-white/90 hover:text-amber-400 font-medium transition-all" href="#work">Project</a></li>
         </ul>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-4">
           <a
             href="#contact"
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border rounded-full text-white bg-white/10 hover:bg-white/20 transition-all"
+            className="hidden lg:flex items-center gap-3 px-8 py-2.5 border border-white/30 rounded-full text-white hover:bg-white/10 transition-all font-medium"
           >
             Connect
             <Image src={assets.arrow_icon} className="w-3" alt="" />
           </a>
 
           {/* Menu Button for Mobile */}
-          <button onClick={openMenu} className="block md:hidden p-3">
-            <Image src={assets.menu} alt="menu" className="w-6" />
+          <button onClick={openMenu} className="block md:hidden p-2">
+            <Image src={assets.menu} alt="menu" className="w-8 invert" />
           </button>
         </div>
 
-        {/* Side Panel (Mobile Menu) - Redesigned to fit dark theme */}
+        {/* Mobile Menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-6 py-10 px-10 fixed -right-64 top-3 w-64 z-50 h-min rounded-2xl bg-white/20 border-white/70 border backdrop-blur-2xl transition duration-500 shadow-2xl"
+          className="flex md:hidden flex-col gap-8 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 bg-[#1a1a1a] transition duration-500 shadow-2xl h-screen"
         >
-          <div onClick={closeMenu} className="absolute right-6 top-6 cursor-pointer p-2 bg-gray rounded-full">
-            <Image src={assets.close} alt="close" className="w-4" />
+          <div onClick={closeMenu} className="absolute right-6 top-6 cursor-pointer p-2 hover:bg-white/10 rounded-full transition-all">
+            <Image src={assets.close} alt="close" className="w-6 invert" />
           </div>
 
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#top">Home</a></li>
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#about">About me</a></li>
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#services">Services</a></li>
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#skills">Skills</a></li>
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#work">My Work</a></li>
-          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#contact">Contact me</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#top">Home</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#about">About me</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#services">Services</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#skills">Skills</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#work">My Work</a></li>
+          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#contact">Contact me</a></li>
         </ul>
       </nav>
 
-      {/* main content here */}
-      <main className="flex flex-col-reverse lg:gap-44 md:flex-row w-full h-[90vh] justify-around sm:justify-center items-center px-5 md:px-20">
-
+      {/* --- MAIN CONTENT */}
+      <main className="container mx-auto px-6 md:px-12 lg:px-20 flex flex-col-reverse md:flex-row items-center justify-center gap-10 md:gap-16 lg:gap-20 pt-24 md:pt-0">
+        
         {/* Left Content Section */}
-        <section className="mt-5 md:mt-0 text-center md:text-left w-full md:w-auto">
-          <div className="flex flex-col w-full px-0 lg:px-0">
+        <section className="text-center md:text-left flex flex-col items-center md:items-start max-w-2xl">
+          
+          {/* Subheading */}
+          <h3 className="flex items-center gap-2 text-lg md:text-2xl text-gray-200 font-Ovo mb-2">
+            Hi! <Image src={assets.hand_icon} alt="namaste" className="w-6 animate-bounce" /> I'm 
+            <span className="text-amber-400 font-semibold">Priyanshu Singh</span>
+          </h3>
 
-            {/* Intro subheading */}
-            <h3 className="flex items-center justify-center md:justify-start gap-2 text-xl md:text-2xl text-gray-300 font-Ovo">
-              Hi! <Image src={assets.hand_icon} alt="namaste" className="w-6 animate-bounce" /> I'm <span className="bg-linear-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent">Priyanshu Singh</span>{" "}
-            </h3>
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white font-Ovo">
+            Frontend Developer | <br />
+            <span className="bg-linear-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent">
+              Focused on React.js
+            </span>
+          </h1>
 
-            {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white font-Ovo mt-4 sm:mt-0">
-              Frontend Developer | <br />
-              <span className="bg-linear-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent">
-                Focused on React.js
-              </span>
-            </h1>
+          {/* Description */}
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mt-4 max-w-lg">
+            Aspiring Frontend Developer based in India, specializing in building
+            scalable applications with React, Tailwind, and JavaScript.
+          </p>
 
-            {/* Description */}
-            <p className="text-gray-400 text-lg leading-relaxed max-w-md mx-auto md:mx-0 font-Ovo mt-4">
-              Aspiring Frontend Developer based in India, specializing in building
-              scalable applications with React, Tailwind, and JavaScript.
-            </p>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto">
+            <a
+              href="/resume.pdf"
+              download
+              className="px-8 py-3 rounded-full bg-linear-to-r from-amber-500 to-orange-600 text-white font-semibold shadow-lg hover:scale-105 transition-all w-full sm:w-auto flex justify-center items-center gap-2"
+            >
+              My resume
+              <Image src={assets.download_icon} alt="resume" className="w-4 invert" />
+            </a>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full md:w-auto">
-              {/* Resume Button */}
-              <a
-                href="/resume.pdf"
-                download
-                className="w-full sm:w-auto px-10 py-3 rounded-full bg-linear-to-r from-amber-500 to-orange-600 text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-lg shadow-orange-900/20"
-              >
-                My resume
-                <Image src={assets.download_icon} alt="resume" className="w-4 invert" />
-              </a>
-
-              {/* Contact Button */}
-              <a
-                href="#contact"
-                className="w-full sm:w-auto px-10 py-3 rounded-full border border-white/20 text-white flex items-center justify-center gap-2 hover:bg-white/5 transition-all backdrop-blur-sm"
-              >
-                Contact me
-                <Image src={assets.right_arrow} alt="contact" className="w-4" />
-              </a>
-            </div>
+            <a
+              href="#contact"
+              className="px-8 py-3 rounded-full border border-white/30 text-white font-medium hover:bg-white/10 transition-all backdrop-blur-sm w-full sm:w-auto flex justify-center items-center gap-2"
+            >
+              Contact me
+              <Image src={assets.right_arrow} alt="contact" className="w-4" />
+            </a>
           </div>
         </section>
 
         {/* Right Image Section */}
-        <section className="relative w-full flex justify-center md:w-auto">
-          <div className="absolute inset-0 bg-amber-500/20 blur-[80px] rounded-full"></div>
+        <section className="relative group">
+           {/* Background Glow Effect */}
+          <div className="absolute inset-0 bg-amber-500/30 blur-[60px] rounded-full group-hover:bg-amber-500/40 transition-all duration-500"></div>
 
-          <div className="relative z-10 p-2 border border-amber-500 rounded-full">
+          {/* Image Container with Border */}
+          <div className="relative z-10 p-2 rounded-full border-2 border-amber-500/50">
             <Image
               src={assets.profile_img}
               alt="Priyanshu Singh"
-              loading="eager"
               priority
-              className="rounded-full w-48 md:w-80 lg:w-96 object-cover shadow-2xl"
+              className="rounded-full w-56 sm:w-72 md:w-80 lg:w-md object-cover shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>
         </section>
+
       </main>
     </header>
   );

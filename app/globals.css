@@ -22,24 +22,24 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #061E29;
+    background: #222222;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #1D546D;
+    background: #000000;
     border-radius: 10px;
     border: 2px solid #061E29;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #266b8a;
+    background: #073043;
   }
 }
 
 /* Firefox ke liye (limited styling options) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1D546D #061E29;
+  scrollbar-color: #222222 #061E29;
 }
 
 .bg-footer {
