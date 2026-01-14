@@ -51,25 +51,25 @@ const Header = () => {
 
           {/* Menu Button for Mobile */}
           <button onClick={openMenu} className="block md:hidden p-2">
-            <Image src={assets.menu} alt="menu" className="w-8 invert" />
+            <Image src={assets.menu} alt="menu" className="w-8" />
           </button>
         </div>
 
         {/* Mobile Menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-8 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 bg-[#1a1a1a] transition duration-500 shadow-2xl h-screen"
+          className="flex md:hidden flex-col gap-6 py-10 px-10 fixed -right-64 top-3 w-64 z-50 h-min rounded-2xl bg-white/20 border-white/70 border backdrop-blur-2xl transition duration-500 shadow-2xl"
         >
-          <div onClick={closeMenu} className="absolute right-6 top-6 cursor-pointer p-2 hover:bg-white/10 rounded-full transition-all">
-            <Image src={assets.close} alt="close" className="w-6 invert" />
+          <div onClick={closeMenu} className="absolute right-6 top-6 cursor-pointer p-2 bg-gray rounded-full">
+            <Image src={assets.close} alt="close" className="w-4" />
           </div>
 
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#top">Home</a></li>
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#about">About me</a></li>
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#services">Services</a></li>
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#skills">Skills</a></li>
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#work">My Work</a></li>
-          <li><a onClick={closeMenu} className="text-xl font-medium text-white hover:text-amber-400" href="#contact">Contact me</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#top">Home</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#about">About me</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#services">Services</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#skills">Skills</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#work">My Work</a></li>
+          <li><a onClick={closeMenu} className="text-lg text-amber-400 hover:text-amber-700" href="#contact">Contact me</a></li>
         </ul>
       </nav>
 
