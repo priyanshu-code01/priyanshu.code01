@@ -6,11 +6,11 @@ const About = () => {
   return (
     <div id='about' className='w-full px-6 sm:px-10 md:px-[12%] py-20 bg-[#030712] text-white overflow-x-hidden relative'>
 
-      {/* --- Background Glows --- */}
+      {/* Background Glows */}
       <div className="absolute bottom-30 left-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* --- Main Content Wrapper */}
+      {/* Main Content Wrapper */}
       <div className="relative z-10">
           
           <div className='text-center mb-16'>

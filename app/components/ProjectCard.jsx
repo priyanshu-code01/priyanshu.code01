@@ -14,25 +14,25 @@ const ProjectCard = ({
   const isReverse = index % 2 !== 0;
 
   return (
-    <div className="relative w-full py-6 md:py-16"> {/* Mobile padding 6 (24px) kar di */}
+    <div className="relative w-full py-6 md:py-16">
       
-      {/* ===== VERTICAL LINE (Desktop Only) ===== */}
+      {/* VERTICAL LINE */}
       <div className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-white/50 rounded-full" />
 
-      {/* ===== CARD WRAPPER ===== */}
+      {/* CARD WRAPPER */}
       <div
         className={`relative w-full flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-16
         ${isReverse ? "md:flex-row-reverse" : ""}`} 
       >
         
-        {/* CENTER DOT (Desktop Only) */}
+        {/* CENTER DOT */}
         <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center">
           <div className="absolute w-14 h-14 rounded-full opacity-20 animate-pulse" style={{ backgroundColor: textColor }} />
           <span className="relative block w-3.5 h-3.5 rounded-full border border-black/50 shadow-[0_0_15px_rgba(0,0,0,0.5)] z-20" style={{ backgroundColor: textColor, boxShadow: `0 0 20px ${textColor}` }} />
-          <div className={`absolute h-0.5 z-0 ${isReverse ? "right-1/2 origin-right" : "left-1/2 origin-left"}`} style={{ width: "160px", background: `${textColor}` }} />
+          <div className={`absolute h-0.5 z-0 ${isReverse ? "right-1/2 origin-right" : "left-1/2 origin-left"}`} style={{ width: "200px", background: `${textColor}` }} />
         </div>
 
-        {/* ===== TEXT SECTION (Mobile par Neeche) ===== */}
+        {/* TEXT SECTION */}
         <div className="w-full md:w-[42%] px-4 md:px-6 text-center md:text-left z-10">
           
           <h2
@@ -66,7 +66,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        {/* ===== IMAGE SECTION (Mobile par Upar) ===== */}
+        {/* IMAGE SECTION */}
         <div className="w-full md:w-[42%] flex justify-center px-4 md:px-0">
             <div className="relative group w-full max-w-[320px] sm:max-w-100"> {/* Mobile image size thoda aur tight */}
                 

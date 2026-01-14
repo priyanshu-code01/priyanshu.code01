@@ -5,8 +5,8 @@ const Projects = () => {
 
     return (
         <div
-            id='work'
-            className='w-full px-[12%] py-10 scroll-mt-20 overflow-hidden bg-[#030712] relative'
+            id='project'
+            className='w-full px-[4%] lg:px-[12%] py-10 scroll-mt-20 overflow-hidden bg-[#030712] relative'
         >
             {/* --- Background Glows */}
             <div className="absolute top-20 right-20 w-60 h-60 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
