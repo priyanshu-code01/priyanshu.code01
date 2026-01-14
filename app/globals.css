@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- FontFamily --- */
+  --font-Outfit: "Outfit", "sans-serif";
+  --font-Ovo: "Ovo", "serif";
+  --font-Kaushan_Script: "Kaushan_Script", "cursive";
+
+  /* --- Grid Template Columns Customization --- */
+  --grid-template-columns-auto: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* Base styles */
+@layer base {
+  * {
+    font-family: var(--font-Outfit);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #061E29;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1D546D;
+    border-radius: 10px;
+    border: 2px solid #061E29;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #266b8a;
+  }
+}
+
+/* Firefox ke liye (limited styling options) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1D546D #061E29;
+}
+
+.bg-footer {
+  background-image: url("/footer-bg-color.png");
+}
